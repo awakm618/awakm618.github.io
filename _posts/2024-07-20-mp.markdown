@@ -15,7 +15,7 @@ tags:
 
 
 
-[Linux](https://raw.githubusercontent.com/awakm618/awakm618.github.io/master/img/Linux9.jpg)
+![Linux](https://raw.githubusercontent.com/awakm618/awakm618.github.io/master/img/Linux9.jpg)
 
 ---
 
