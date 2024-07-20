@@ -1,0 +1,153 @@
+---
+
+layout:     post
+title:   "Linux系统之在命令行玩转Pacman4console贪吃人经典小游戏"
+author: "江湖有缘"
+header-style: text
+catalog: true
+tags:
+    - Linux
+    - 运维
+    - 服务器
+
+---
+
+
+# 一、Pacman4console小游戏介绍
+## 1.1 Pacman4console小游戏简介
+
+
+
+
+
+>Pacman4console是一个在Linux终端命令行上可玩的小游戏，灵感来自于经典的街机游戏Pacman。它是一个简单而有趣的游戏，目标是帮助主角Pacman吃掉所有的豆子，同时避免被四个鬼魂追捕。
+
+
+## 1.2 项目预览
+
+
+
+
+- 可以看下部署好的项目预览
+
+
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/cae20825b73346c4a3f3356880bc2baf.png)
+
+
+
+
+
+
+
+
+
+# 二、本次实践介绍
+
+
+## 2.1 本地环境规划
+>本次实践为个人测试环境，操作系统版本为 Ubuntu 22.04.1 LTS。
+
+
+|hostname| IP地址  | 操作系统版本   |内核版本   |
+|--|--| --|  --| 
+| ubuntu-001|192.168.3.251 |Ubuntu 22.04.1 LTS| 5.15.0-105-generic|
+
+
+## 2.2 本次实践介绍
+>1.本次实践环境为个人测试环境，生产环境请谨慎；
+>2.在ubuntu环境下安装Pacman4console贪吃人经典小游戏。
+
+
+
+
+
+
+# 三、检查系统镜像源
+## 3.1 检查系统镜像源
+>对于Ubuntu 22.04.1 LTS版本，将镜像源配置文件/etc/apt/sources.list修改内容如下。
+
+
+```bash
+deb https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb-src https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+
+deb https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+deb-src https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
+deb https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+
+# deb https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+# deb-src https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+
+deb https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+
+```
+
+## 3.2 更新软件列表
+>执行以下命令，更新软件列包表。
+
+```bash
+root@ubuntu-001:~# apt update
+Hit:1 https://mirrors.aliyun.com/ubuntu jammy InRelease
+Hit:2 https://mirrors.aliyun.com/ubuntu jammy-security InRelease
+Hit:3 https://mirrors.aliyun.com/ubuntu jammy-updates InRelease
+Hit:4 https://mirrors.aliyun.com/ubuntu jammy-backports InRelease
+Hit:5 https://mirrors.aliyun.com/docker-ce/linux/ubuntu jammy InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+116 packages can be upgraded. Run 'apt list --upgradable' to see them.
+```
+# 四、安装Pacman4console
+## 4.1 安装Pacman4console
+>可以使用apt命令一键安装Pacman4console小游戏。
+
+```bash
+apt install pacman4console -y 
+```
+
+
+
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/a5d4494034154d2993866124c75d9ab6.png)
+
+
+
+
+
+
+
+
+
+
+## 4.2 启动Pacman4console游戏
+>直接在命令行输入`pacman4console`命令，自动启动Pacman4console游戏。
+
+```bash
+pacman4console
+```
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/7793d09f1a5a44d1bd4914d8ecd1453a.png)
+
+
+# 五、试玩小游戏
+
+
+>按照主菜单提示，按任意键开始游戏，使用方向键来控制移动。
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/50c2b30b5b6840679c4614c687a168ec.png)
+
+# 六、总结
+
+
+>Pacman4console是一个轻量级且很有趣的游戏，适合在Linux终端命令行上玩耍。它不需要复杂的图形界面，只需要使用键盘就可以完全控制游戏。如果你喜欢经典的街机游戏Pacman，并且想在Linux终端上体验一下，那么Pacman4console是一个不错的选择。
+
+
+
