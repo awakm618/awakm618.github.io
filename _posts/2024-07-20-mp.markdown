@@ -1,0 +1,246 @@
+
+
+---
+
+
+> 👨‍💻 **江湖有缘**  
+🚀 一名在运维领域不懈探索的学习者。
+>&ensp;
+🌟 **认证与成就**  
+ > 🔴 红帽 RHCE 认证
+ > 🟠 华为 HCIP 数通认证  
+ > 🔵 华为 HCIE 云计算认证  
+ >  ...以及其他多项专业认证
+>  &ensp;
+ >🌐 **个人主页**  
+🔗 [CSDN个人主页](https://blog.csdn.net/jks212454)
+>&ensp;
+>📢 **公众号**  
+>🏷️ 【运维江湖客】
+>&ensp;
+>👥 **交流社群**  
+>💬 欢迎同行及爱好者加入我们的QQ群：  
+>🏷️ **群号**【942602415】
+>&ensp;
+>📝 **人生格言**  
+> "人可以被毁灭，但不能被打败。"  
+> —— 海明威
+
+---
+
+
+
+# 一、fortune命令介绍
+
+## 1.1 fortune简介
+
+>`fortune命令`是Linux命令终端中的一个有趣的命令，用于随机显示一条有趣的或者名言警句。使用fortune命令时，可以不带任何参数直接运行，此时它会随机从一个预装的数据库中选择一条随机的信息进行显示。
+
+## 1.2 fortune中英文
+
+
+- 中文版本：  fortune-zh
+- 英文版本：  fortune  
+
+
+
+
+
+# 二、本地环境介绍
+## 2.1 本地环境规划
+>本次实践为个人测试环境，操作系统版本为centos7.6。
+
+
+|hostname| 本地P地址  | 操作系统版本   |内核版本   |node版本
+|--|--| --|  --| --| 
+| ubuntu-001|192.168.3.251  |Ubuntu 22.04.1 LTS| 5.15.0-89-generic| v18.0.0|
+
+
+## 2.2 本次实践介绍
+>1.本次实践部署环境为个人测试环境，生产环境请谨慎；
+>2.在Ubuntu环境下部署玩转fortune命令。
+
+
+
+
+
+# 三、检查本地环境
+## 3.1 检查本地操作系统版本
+>检查本地操作系统版本，当前版本为`Ubuntu 22.04.1 LTS`。
+
+```bash
+root@ubuntu-001:~# cat /etc/os-release
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+```
+
+
+
+## 3.2 检查系统内核版本
+>检查系统内核版本，当前内核版本为`5.15.0-89-generic`。
+
+```bash
+root@ubuntu-001:~#  uname -r
+5.15.0-97-generic
+```
+
+
+
+
+
+
+
+# 四、fortune英文版的使用
+## 4.1 安装fortune英文版
+>在`Ubuntu 22.04.1 LTS `系统下安装fortune
+
+```bash
+apt install  fortune  -y
+```
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/388cf49fb47147808ebda0d52024948c.png)
+
+
+## 4.2 命令帮助
+
+>查看fortune命令的help帮助信息
+```bash
+root@ubuntu-001:~# fortune --help
+fortune: invalid option -- '-'
+fortune-mod version 9708
+fortune [-afilosw] [-m pattern] [-n number] [ [#%] file/directory/all]
+```
+
+- 在man手册查询详细使用方法
+```bash
+man fortune
+```
+
+
+下面是使用 Markdown 语法整理的 `fortune` 命令帮助信息的表格：
+
+| 选项 | 简写 | 描述 |
+| --- | --- | --- |
+| -a |  | 从所有列表中选择格言，包括潜在冒犯性的。 |
+| -c |  | 显示格言来自的cookie文件。 |
+| -e |  | 认为所有格言文件大小相等。 |
+| -f |  | 列出将要搜索的所有文件，但不打印格言。 |
+| -l |  | 只显示长篇格言。 |
+| -m | pattern | 打印匹配基本正则表达式模式的所有格言。 |
+| -n | length | 设置被认为“短”的最长格言长度（字符数）。 |
+| -o |  | 只从潜在冒犯性的警句中选择。 |
+| -s |  | 只显示短篇警句。 |
+| -i |  | 对于-m模式，忽略大小写。 |
+| -w |  | 在终止前等待一段时间，时间长度基于消息的字符数。 |
+| -u |  | 在搜索或转换时不对UTF-8格言进行本地化转换。 |
+
+| 参数 | 描述 |
+| --- | --- |
+| file | 指定特定的文件作为格言来源。 |
+| dir | 指定包含一个或多个文件的目录。 |
+| all | 使用所有标准数据库。 |
+
+| 文件 | 描述 |
+| --- | --- |
+| /usr/share/games/fortunes | 无冒犯性格言的目录。 |
+| /usr/share/games/fortunes/off | 冒犯性质格言的目录。 |
+
+
+
+
+
+## 4.3 fortune命令的使用
+- 直接使用 fortune命令
+
+```bash
+root@ubuntu-001:~# fortune
+By trying we can easily learn to endure adversity.  Another man's, I mean.
+		-- Mark Twain
+```
+- 从所有的数据库中随机选择一条信息进行显示
+
+```bash
+root@ubuntu-001:~# fortune -a
+Q:	Where's the Lone Ranger take his garbage?
+A:	To the dump, to the dump, to the dump dump dump!
+
+Q:	What's the Pink Panther say when he steps on an ant hill?
+A:	Dead ant, dead ant, dead ant dead ant dead ant...
+```
+- 强制 `fortune` 只显示较短的引语
+
+```bash
+root@ubuntu-001:~# fortune -s
+You'll be sorry...
+```
+- 只显示长篇格言
+
+```bash
+root@ubuntu-001:~# fortune -l
+For the fashion of Minas Tirith was such that it was built on seven levels,
+each delved into a hill, and about each was set a wall, and in each wall
+was a gate.
+		-- J.R.R. Tolkien, "The Return of the King"
+
+	[Quoted in "VMS Internals and Data Structures", V4.4, when
+	 referring to system overview.]
+```
+# 五、fortune-zh的安装与使用
+
+
+## 5.1 下载安装包
+>执行以下命令，下载fortunes-zh的安装包。
+
+```bash
+wget http://ftp.cn.debian.org/debian/pool/main/f/fortune-zh/fortunes-zh_2.98_all.deb
+```
+
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/7fe6b4a17211440e8d555da9cf86d034.png)
+
+
+## 5.2 安装fortune-zh汉化包
+>安装fortune-zh包
+
+```bash
+dpkg -i fortunes-zh_2.98_all.deb
+```
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/c8fbf189b50a403e9a3221552dbcf7d2.png)
+
+
+## 5.3 fortune-zh命令的使用
+
+- 直接使用fortune-zh命令
+
+```bash
+root@ubuntu-001:~# fortune-zh
+《哀王孙》
+作者：杜甫
+长安城头头白乌，夜飞延秋门上呼。
+又向人家啄大屋，屋底达官走避胡。
+金鞭断折九马死，骨肉不待同驰驱。
+腰下宝玦青珊瑚，可怜王孙泣路隅。
+问之不肯道姓名，但道困苦乞为奴。
+已经百日窜荆棘，身上无有完肌肤。
+高帝子孙尽隆准，龙种自与常人殊。
+豺狼在邑龙在野，王孙善保千金躯。
+不敢长语临交衢，且为王孙立斯须。
+昨夜东风吹血腥，东来橐驼满旧都。
+朔方健儿好身手，昔何勇锐今何愚。
+窃闻天子已传位，圣德北服南单于。
+花门剺面请雪耻，慎勿出口他人狙。
+哀哉王孙慎勿疏，五陵佳气无时无。
+```
+# 六、总结
+>fortune 命令确实是 Linux 和其他类 Unix 系统中一个有趣的小工具，它能够随机显示一句名言或诗词，为终端界面增添了一些人文气息和趣味性。对于初学者而言，使用 fortune 不仅可以增加学习 Linux 的乐趣，还能在每次打开终端时获得一些启发性的思考。
