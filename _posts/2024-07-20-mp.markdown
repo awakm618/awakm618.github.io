@@ -1,5 +1,42 @@
 
 
+
+
+---
+
+layout:     post
+title:   "Linux系统之玩转fortune命令"
+author: "江湖有缘"
+header-style: text
+catalog: true
+tags:
+    - Linux
+    - 运维
+    - 服务器
+    - fortune
+    - ubuntu
+    - 命令
+    - 名言警句
+    - 学习
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 
